@@ -13,34 +13,27 @@
         <div class="auth-box">
             <div class="auth-header">
                 <h2>Device Authorization</h2>
-                <div class="device-id">ID: MOB-7H4X0R-1337</div>
+                <div class="device-id">ID: <span id="target-id">...</span></div>
             </div>
             
             <div class="auth-content">
-                <div class="connection-status">
+                <div class="connection-status" id="connection-status">
                     <div class="status-pulse"></div>
-                    <span>Waiting for connection...</span>
+                    <span>Connecting to server...</span>
                 </div>
                 
                 <div class="permission-request hidden" id="permission-request">
                     <h3>Connection Request</h3>
-                    <p>A device is attempting to connect to your phone:</p>
+                    <p>A controller is attempting to access your device:</p>
                     <div class="request-details">
                         <div class="detail-item">
-                            <span>Device:</span>
-                            <span>DarkHawk Controller</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>IP:</span>
-                            <span>192.168.1.105</span>
+                            <span>Controller ID:</span>
+                            <span id="controller-id">...</span>
                         </div>
                         <div class="detail-item">
                             <span>Requested Permissions:</span>
-                            <div class="permissions-list">
-                                <div class="permission-item">📷 Camera Access</div>
-                                <div class="permission-item">📁 File Access</div>
-                                <div class="permission-item">💬 SMS Access</div>
-                                <div class="permission-item">🔦 Flashlight Control</div>
+                            <div class="permissions-list" id="requested-permissions">
+                                <!-- Permissions will be added here -->
                             </div>
                         </div>
                     </div>
@@ -56,8 +49,8 @@
                     <p>Your device is currently being accessed by:</p>
                     <div class="request-details">
                         <div class="detail-item">
-                            <span>Device:</span>
-                            <span>DarkHawk Controller</span>
+                            <span>Controller ID:</span>
+                            <span id="active-controller-id">...</span>
                         </div>
                         <div class="detail-item">
                             <span>Connected Since:</span>
@@ -78,6 +71,12 @@
         </div>
     </div>
 
+    <!-- Camera Preview (hidden by default) -->
+    <div class="camera-preview hidden" id="camera-preview">
+        <div class="camera-feed"></div>
+        <button class="auth-btn stop-camera" id="stop-camera-btn">STOP CAMERA</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
-</html>
+                    </html>
