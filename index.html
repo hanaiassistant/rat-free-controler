@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Connection</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+</head>
+<body>
+    <div class="matrix-bg"></div>
+    <div class="container">
+        <div class="auth-box">
+            <div class="auth-header">
+                <h2>Device Authorization</h2>
+                <div class="device-id">ID: MOB-7H4X0R-1337</div>
+            </div>
+            
+            <div class="auth-content">
+                <div class="connection-status">
+                    <div class="status-pulse"></div>
+                    <span>Waiting for connection...</span>
+                </div>
+                
+                <div class="permission-request hidden" id="permission-request">
+                    <h3>Connection Request</h3>
+                    <p>A device is attempting to connect to your phone:</p>
+                    <div class="request-details">
+                        <div class="detail-item">
+                            <span>Device:</span>
+                            <span>DarkHawk Controller</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>IP:</span>
+                            <span>192.168.1.105</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Requested Permissions:</span>
+                            <div class="permissions-list">
+                                <div class="permission-item">📷 Camera Access</div>
+                                <div class="permission-item">📁 File Access</div>
+                                <div class="permission-item">💬 SMS Access</div>
+                                <div class="permission-item">🔦 Flashlight Control</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="auth-buttons">
+                        <button class="auth-btn deny" id="deny-btn">DENY</button>
+                        <button class="auth-btn allow" id="allow-btn">ALLOW</button>
+                    </div>
+                </div>
+                
+                <div class="connected-status hidden" id="connected-status">
+                    <h3>Connection Active</h3>
+                    <p>Your device is currently being accessed by:</p>
+                    <div class="request-details">
+                        <div class="detail-item">
+                            <span>Device:</span>
+                            <span>DarkHawk Controller</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Connected Since:</span>
+                            <span id="connection-time">Just now</span>
+                        </div>
+                    </div>
+                    
+                    <div class="active-permissions">
+                        <h4>Active Permissions:</h4>
+                        <div class="permissions-list" id="active-permissions">
+                            <!-- Permissions will be added here when connected -->
+                        </div>
+                    </div>
+                    
+                    <button class="auth-btn disconnect" id="disconnect-btn">DISCONNECT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
